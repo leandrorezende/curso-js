@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Curso JavaScript</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./bootstrap//js/bootstrap.js"></script>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <div class="row">
+            <div class="col-sm-5 mt-4">
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        <label for="inputTodo">Todo</label>
+                        <input type="text" id="inputAddTodo" class="form-control" placeholder="Digite um todo" />
+                    </div>
+                </div>
+                <button id="addTodo" class="btn btn-primary">Adicionar</button>
+                <ul id="listTodos" class="list-group mt-2 mr-2">
+                </ul>
+            </div>
+
+            <div class="col-sm-5 mt-4 ml-2">
+                <div class="form-row">
+                    <div class="form-group col-md-5">
+                        <label for="inputGitHubUser">GitHub User</label>
+                        <input type="text" id="inputGitHubUser" value="leandrorezende" class="form-control">
+                    </div>
+                </div>
+                <button id="searchRepostories" class="btn btn-primary">Search Repositories</button>
+                <ul id="listRepositories" class="list-group mt-2 mr-2">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js-file.js"></script>
+</body>
+
+</html>

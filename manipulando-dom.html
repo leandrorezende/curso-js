@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>Curso Javascript</title>
+</head>
+<div id="app" class="box">
+    <input type="text" name="nome">
+    <button onClick="adicionar()">Adicionar</button>
+    <button class="buttonBox">Create Box</button>
+</div>
+
+<body>
+    <script>
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+        var containerElement = document.querySelector("#app");
+
+        var btnElement = document.querySelector("button.buttonBox");
+        btnElement.onclick = function () {
+            var boxElement = document.createElement("div");
+            boxElement.style.width = "100px";
+            boxElement.style.height = "100px";
+            boxElement.style.backgroundColor = "#f00";
+            boxElement.onmouseover = function () {
+                boxElement.style.backgroundColor = getRandomColor();
+            }
+            containerElement.appendChild(boxElement);
+        }
+
+        var ul = document.createElement("ul");
+        containerElement.appendChild(ul);
+        nomes.forEach(nome => addItemUl(nome));
+
+        function adicionar() {
+            var inputField = document.querySelector("input");
+            addItemUl(inputField.value);
+            inputField.value = "";
+        }
+
+        function addItemUl(text) {
+            var ul = document.querySelector("ul");
+            var li = document.createElement("li");
+            li.appendChild(document.createTextNode(text));
+            ul.appendChild(li);
+        }
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+
+</html>
